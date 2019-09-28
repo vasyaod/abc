@@ -14,11 +14,37 @@
 
   <!-- Theme used for syntax highlighting of code -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/lib/css/monokai.css">
+  <style>
+    @keyframes fadeOut {
+      0% {opacity: 1;}
+      100% {opacity: 0;}
+    }
 
+    .footer {
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      bottom: 1em;
+      left: 1em;
+      font-size: 0.5em;
+      -webkit-animation-name: fadeOut;
+      animation-name: fadeOut;      
+    }
+  </style>
 </head>
 
 <body>
   <div class="reveal">
+    <!-- 2. Create hidden header/footer <div> -->
+    <div id="hidden" style="display:none;">
+      <div id="header">
+        <div class='footer'>
+            <a href="http://bit.ly/2mA03Ie">
+              <img width="50" height="50" style="background:none; border:none; box-shadow:none;" src="images/chrome-400.png">
+            </a>
+        </div>
+      </div>
+    </div>
     <div class="slides">
       <section>
         <section>
@@ -74,6 +100,7 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
   <script>
     // More info about config & dependencies:
@@ -90,6 +117,14 @@
         { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/notes/notes.js', async: true },
         { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/highlight/highlight.js', async: true }
       ]
+    });
+    $('div.reveal').append(header);
+    // displayed upon load, hides when slide changes
+    Reveal.addEventListener('slidechanged', function(event) {
+      document.querySelector('.footer').style.opacity = '0.2';
+      setTimeout(function() { 
+        document.querySelector('.footer').style.opacity = '1';
+      }, 1000);
     });
   </script>
 </body>
