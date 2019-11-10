@@ -9,9 +9,15 @@ Purpose and features:
 
 The plugin doesn't send your data and statistics anywhere without your permission.
 
-Page: https://vasyaod.github.io/abc/
+Presentation: https://vasyaod.github.io/abc/
 
-Group: https://groups.google.com/forum/#!forum/amazon-budget-control
+Discourse of issues in the group https://groups.google.com/forum/#!forum/amazon-budget-control
+
+## Philosophical discuss
+
+A lot of people use bank apps for monitoring them spendings and budget but in this concrete case, the plugin was developed especially for amazon web site (maybe because the author is buying 99% of non-grocery goods on this market).
+
+The plugin is positioned #anti-cash-flow against other apps that encourage an increasing number or amount of transactions. The primary goal is to avoid emotion behavior and purchases.
 
 ## Download
 
