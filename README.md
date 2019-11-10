@@ -63,6 +63,8 @@ Alternative way to build the plugin is using `build` shell script
  - remove the statistics sending field form the initial setting form
  - fix limit message issue
 
-## Author
+## License
 
-(C) Vasilii Vazhesov (vasiliy.vazhesov@gmail.com)
+© Vasilii Vazhesov (vasiliy.vazhesov@gmail.com)
+
+Licensed under the MIT license.
