@@ -13,9 +13,9 @@ Page: https://vasyaod.github.io/abc/
 
 Group: https://groups.google.com/forum/#!forum/amazon-budget-control
 
-# Download
+## Download
 
-[Chrome extension](http://bit.ly/2mA03Ie)
+[Chrome extension](https://bit.ly/2mA03Ie)
 
 [Firefox extension](https://mzl.la/2nOiSHJ)
 
