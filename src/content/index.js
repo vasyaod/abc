@@ -39,13 +39,21 @@ async function init() {
   const fieldName = "month-" + date.getFullYear() + "-" + date.getMonth()
 
   const buttonDiv = document.querySelector("#addToCart_feature_div")
+  
+  const monthLimitValue = parseInt(storage.monthLimitValue)
+  let monthValue = parseInt(storage[fieldName])
+  
+  if (isNaN(monthValue)) {
+    monthValue = 0
+  }
+
   if (buttonDiv) {
     var budgetContainer = document.createElement('div');
     budgetContainer.innerHTML = `
       <div class="a-section a-spacing-medium a-spacing-top-small">
         <ul class="a-unordered-list a-vertical a-spacing-none">  
           <li>
-            ${formatCurrency(storage.countryId, storage[fieldName])} were spent this month
+            ${formatCurrency(storage.countryId, monthValue)} were spent this month
           </li>
         </ul>
       <div>
@@ -70,9 +78,6 @@ async function init() {
   }
 
   // Set listeners on most usable buttons
-  const monthLimitValue = parseInt(storage.monthLimitValue)
-  const monthValue = parseInt(storage[fieldName])
-  // console.log("!", storage.isMonthLimitEnable, monthLimitValue, monthValue ,storage.monthLimitValue < storage[fieldName])
   if (storage.isMonthLimitEnable && monthLimitValue < monthValue) {
     [
       "#turbo-checkout-pyo-button", 
@@ -86,11 +91,13 @@ async function init() {
           if(!isEventAccept()) {
             event.preventDefault()
             event.stopPropagation()
-            store.dispatch(openDialog(
-              element, 
-              event, 
-              storage.monthLimitValue,
-              storage[fieldName]),
+            store.dispatch(
+              openDialog(
+                element, 
+                event, 
+                monthLimitValue,
+                monthValue
+              ),
               storage.countryId,
             )
             return false;

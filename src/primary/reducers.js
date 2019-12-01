@@ -11,6 +11,8 @@ const initialState = {
   isLoadingError: false,
   redirectUrl: null,
   countryId: null,
+  country: null,
+  orders: [],
   summary: {
     currentMonth: 0,
     previousMonth: 0,
@@ -88,6 +90,7 @@ export function todoApp(state = initialState, action) {
         isLoadingError: false,
         loadingStatus: null,
         refreshDate: action.refreshDate,
+        orders: action.items,
         summary: {
           currentMonth: u.currentMonth(action.items),
           currentMonthName: monthByIndex(new Date().getMonth()),

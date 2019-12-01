@@ -21,6 +21,7 @@ module.exports = {
     new CopyPlugin([
       { from: 'icons/**', to: './'},
       { from: 'themes/**', to: './'},
+      { from: 'images/**', to: './'},
       { from: 'manifest.json', to: './'},
       { from: 'popup.html', to: './'},
       { from: 'jquery-3.4.1.min.js', to: './' },

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Divider } from 'semantic-ui-react'
+import { Divider,Segment} from 'semantic-ui-react'
 import Summary from './Summary.jsx'
 import MonthlyChart from './MonthlyChart.jsx'
 
@@ -8,11 +8,11 @@ class Report extends Component {
 
   render() {
     return (
-      <div>
+      <Segment attached='bottom'>
         <Summary/>
         <Divider hidden />
         <MonthlyChart/>
-      </div>
+      </Segment>
     );
   }
 }

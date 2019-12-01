@@ -8,7 +8,7 @@ class CombinedSettings extends Component {
 
   render() {
     return (
-      <div>
+      <Segment attached='bottom'>
         <Header as='h5' attached='top' block>
           When limit is exceeded, the plugin will notify you.
         </Header>
@@ -17,7 +17,7 @@ class CombinedSettings extends Component {
         </Segment>
         <Divider hidden />
         <Settings/>
-      </div>
+      </Segment>
     );
   }
 }

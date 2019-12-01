@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Button, List, Segment, Container, Divider, Icon, Menu, Grid, Header, Table, Select, Checkbox, Dropdown, Flag } from 'semantic-ui-react'
 import Report from './Report.jsx'
+import Orders from './Orders.jsx'
 import InitialSetting from './InitialSetting.jsx'
 import CircleLoader from './CircleLoader.jsx'
 import LoadingProgress from './LoadingProgress.jsx'
@@ -54,6 +55,9 @@ class Page extends Component {
                       <Menu.Item name='report' active={this.state.activeItem === 'report'} onClick={this.handleItemClick.bind(this)}>
                         Report
                       </Menu.Item>
+                      <Menu.Item name='orders' active={this.state.activeItem === 'orders'} onClick={this.handleItemClick.bind(this)}>
+                        Orders
+                      </Menu.Item>
                       <Menu.Item name='settings' active={this.state.activeItem === 'settings'} onClick={this.handleItemClick.bind(this)}>
                         Limits & Settings
                       </Menu.Item>
@@ -85,11 +89,9 @@ class Page extends Component {
                         </Menu.Item>
                       </Menu.Menu>
                     </Menu>
-                    <Segment attached='bottom'>
-                      {this.state.activeItem === 'report' && <Report/>}
-                      {this.state.activeItem === 'settings' && <CombinedSettings/>}
-                    </Segment>
-                    {/* <Tab panes={panes} /> */}
+                    {this.state.activeItem === 'report' && <Report/>}
+                    {this.state.activeItem === 'orders' && <Orders/>}
+                    {this.state.activeItem === 'settings' && <CombinedSettings/>}
                   </Segment>
                   {/* <Segment basic>
                     <iframe width="100%" height="340px" src="https://abc.f-proj.com/ad.html?terms=acid aging hyaluronic door serum wrinkle vitamin retinol lock leather&title=Ads" frameBorder="0"></iframe>
