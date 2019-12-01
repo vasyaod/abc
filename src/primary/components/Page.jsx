@@ -101,11 +101,8 @@ class Page extends Component {
             } 
             <Menu fixed='bottom' inverted>
               <Container text>
-                <Menu.Item href='mailto:vasiliy.vazhesov@gmail.com' position='right'>
-                  <Icon name='mail'/> Proposals?
-                </Menu.Item>
-                <Menu.Item href='https://groups.google.com/forum/#!forum/amazon-budget-control'>
-                  <Icon name='google'/> Issues?
+                <Menu.Item href='https://github.com/vasyaod/abc/issues'>
+                  <Icon name='github'/> Report issue on Github
                 </Menu.Item>
                 <Menu.Item color='facebook' onClick={this.props.shareFacebook}>
                   <Icon name='facebook'/> Share on Facebook

@@ -6,7 +6,7 @@ Purpose and features:
  - track and be aware of your spendings
  - set limits
  - get notified if limits are exceeded
- - to see and download order history and item list
+ - see and download order history and item list
 
 The plugin doesn't send your data and statistics anywhere without your permission.
 
@@ -68,6 +68,7 @@ Alternative way to build the plugin is using `build` shell script
 
  - add list of order / items 
  - fix NaN issue on Amazon content page
+ - add link to github project
 
 ## License
 
