@@ -2,6 +2,7 @@ import { List, Set } from 'immutable'
 
 import countries, { countryById } from '../countries.js'
 import { getStorage, setStorage, sendMessage } from '../async-utils.js'
+import { download } from './download.js'
 
 const locationUrl = new URL(window.location.href);
 const debug = locationUrl.searchParams.get("debug");
@@ -241,5 +242,25 @@ export function shareTwitter() {
     const url = "https://vasyaod.github.io/abc"; 
     const twitterShareUrl = `https://twitter.com/share?url=${encodeURI(url)}&via=${twitterHandle}&text=${text}`
     window.open(twitterShareUrl, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600')
+  }
+}
+
+export function downloadJson() {
+  return async (dispatch) => {
+    const storage = await getStorage()
+    download(JSON.stringify(storage.orders, null, 2), "orders.json", "application/json" )
+  }
+}
+
+export function downloadCsv() {
+  return async (dispatch) => {
+    const storage = await getStorage()
+    const str = List(storage.orders)
+      .sortBy(e => e.orderDate)
+      .reverse()
+      .map(order => `${order.id},${new Date(order.orderDate).toJSON().slice(0, 10)},${order.amount}`)
+      .reduce((accum, data) => accum + data + "\n", "");
+    
+    download(str, "orders.csv", "text/plain")
   }
 }

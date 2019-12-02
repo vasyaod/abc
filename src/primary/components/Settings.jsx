@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Segment, Header, Checkbox, Dropdown, Message, Button } from 'semantic-ui-react'
 
-import { loadData, changeCountry, changeCollectionData, resetState }  from '../actions.js'
+import { loadData, changeCountry, changeCollectionData, resetState, downloadCsv, downloadJson }  from '../actions.js'
 import countries, { countryById } from '../../countries.js'
 
 const countryOptions = countries.map(x => {return {
@@ -52,9 +52,23 @@ class Settings extends Component {
         </Header>
         <Segment attached>
           <Button 
-            color='blue'
             onClick={this.props.resetState}>
             Reset 
+          </Button>
+        </Segment>
+
+        <Header as='h5' attached='top' block>
+          Download order data
+        </Header>
+        <Segment attached>
+          <Button 
+            onClick={this.props.downloadCsv}>
+            Download CSV
+          </Button>
+
+          <Button 
+            onClick={this.props.downloadJson}>
+            Download JSON
           </Button>
         </Segment>
       </div>
@@ -71,5 +85,5 @@ const mapStateToProps = (state) => {
 
 export default connect(
   mapStateToProps,
-  { loadData, changeCountry, changeCollectionData, resetState }
+  { loadData, changeCountry, changeCollectionData, resetState, downloadCsv, downloadJson }
 )(Settings)
