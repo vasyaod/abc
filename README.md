@@ -69,6 +69,7 @@ Alternative way to build the plugin is using `build` shell script
  - add list of order / items 
  - fix NaN issue on Amazon content page
  - add link to github project
+ - fix a accumulating error
 
 ## License
 

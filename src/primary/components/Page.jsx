@@ -102,7 +102,7 @@ class Page extends Component {
             <Menu fixed='bottom' inverted>
               <Container text>
                 <Menu.Item href='https://github.com/vasyaod/abc/issues'>
-                  <Icon name='github'/> Report issue on Github
+                  <Icon name='github'/> Issues?
                 </Menu.Item>
                 <Menu.Item color='facebook' onClick={this.props.shareFacebook}>
                   <Icon name='facebook'/> Share on Facebook
